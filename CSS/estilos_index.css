@@ -1,0 +1,64 @@
+header{
+    background-color: #ffffff;
+    border : 1px solid #959595;
+    padding: 10px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+#cabezera_index {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 10px;
+    border: 1px solid #3f3f3f;
+}
+
+
+#titulo {
+    display: flex;
+    justify-content: space-between; /* Distribuye los elementos */
+    align-items: center; /* Alinea verticalmente */
+    font-family: 'Respira Black', sans-serif;
+    font-size: xx-large;
+    padding: 10px;
+    margin-left: 40%;
+    margin-right: 0%;
+    background-color: #ffffff; /* Fondo claro para el título */
+}
+
+
+#suscribirse{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    align-items: center;
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 5px;
+}
+
+#boton_login {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    align-items: center;
+    margin-left: 0;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+.botones {
+    display: flex;
+    gap: 10px; /* Espaciado entre botones */
+    margin-left: auto; /* Empuja los botones hacia la derecha */
+}
+
+
+#iniciar-secion{
+    border: 1px solid #959595;
+    
+}
+
+#logo {
+    width: 50px; /* Ajusta el tamaño del logo */
+    height: auto; /* Mantiene proporciones */
+    margin-left: 15px; /* Espaciado con el título */
+}
