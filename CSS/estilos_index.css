@@ -174,3 +174,26 @@ body {
   padding: 15px; /* Margen interno para separar contenido del borde */
 }
 
+.ad-item {
+  margin-bottom: 2cm; /* espacio entre anuncios */
+  /* Otros estilos opcionales */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.ad-item img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+.ad-title {
+  font-size: 18px;
+  margin: 10px 0;
+}
+.ad-link {
+  text-decoration: none;
+  color: #007bff;
+}
+
+
