@@ -39,7 +39,7 @@
             </div>
 
             <div id="boton_login">
-                <button id="iniciar-secion" type="button" class="btn btn-light" onclick="location.href='login.html'">
+                <button id="iniciar-secion" type="button" class="btn btn-light" onclick="abrirModal()">
                     Iniciar Sesión
                 </button>
             </div>
@@ -93,7 +93,68 @@
         </div>
         
     </div>
+
+    <!-- Log in -->
+    <div id="loginModal" class="modal-overlay">
+        <div class="login-card">
+            <button class="close-btn" onclick="cerrarModal()">&times;</button>
+            <h2>Login</h2>
+            <form id="loginForm" action="login.php" method="POST">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="email@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <button type="submit" class="login-btn">Login</button>
+
+                <div class="forgot-password">
+                    <a href="#" onclick="alert('Función próximamente')">Forgot password?</a>
+                </div>
+
+                <div class="create-account">
+                    New user? <a href="#" onclick="abrirModalRegistro()">Create account here</a>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+
     
+    <script src="login.js"></script>
+    <!-- fin login -->
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal-overlay">
+        <div class="login-card">
+            <button class="close-btn" onclick="cerrarModalRegistro()">&times;</button>
+            <button class="back-btn" onclick="regresarAlLogin()" title="Volver al login">←</button>
+            <h2>Create Account</h2>
+            <form id="registerForm" action="register.php" method="POST">
+                <div class="form-group">
+                    <label for="reg_email">Email:</label>
+                    <input type="email" id="reg_email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="reg_password">Password:</label>
+                    <input type="password" id="reg_password" name="password" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="reg_confirm">Confirm Password:</label>
+                    <input type="password" id="reg_confirm" required>
+                </div>
+
+                <button type="submit" class="login-btn">Register</button>
+            </form>
+        </div>
+    </div>
+    <!-- Fin Register Modal -->
     
     <footer id="pie_pagina">
         <div id="footer-content">
