@@ -1,10 +1,15 @@
+<?php
+// index.php
+require_once 'config.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NewTechs</title>
-    <link rel="stylesheet" href="../css/estilos_index.css">
+   <link rel="stylesheet" href="/Noticiero/css/estilos_index.css">
+
     <!--Tipografia titular-->
     <link href="https://db.onlinewebfonts.com/c/a294b78eedf270c41a9489c97c72f429?family=Respira+Black" rel="stylesheet">
     <!--Boostrap-->
@@ -12,21 +17,16 @@
     <!--Icono navegador-->
     <link rel="icon" type="image/png" href="../Imagenes/letra-t.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
-
-
 <body>
-
     <div class="wrapper"> 
         <header id="cabezera_index">
-        <a href="index.html">
-            <img id="logo" src="../Imagenes/letra-t.png" alt="Logo News Tech" width="50">
+        <a href="index.php">
+            <img id="logo" src="/Noticiero/Imagenes/letra-t.png" alt="Logo News Tech" width="50">
         </a>
         
-
         <div id="titulo">
             News Tech
         </div>
@@ -39,9 +39,23 @@
             </div>
 
             <div id="boton_login">
-                <button id="iniciar-secion" type="button" class="btn btn-light" onclick="abrirModal()">
-                    Iniciar Sesión
-                </button>
+                <?php if (isset($_SESSION['usuario_nombre'])): ?>
+                    <!-- Usuario logueado -->
+                    <div class="dropdown">
+                        <button id="usuario-logueado" type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            <?php echo htmlspecialchars($_SESSION['usuario_nombre']); ?>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" onclick="cerrarSesion()">Cerrar Sesión</a></li>
+                            <li><a class="dropdown-item" href="#" >Mi Perfil</a></li>
+                        </ul>
+                    </div>
+                <?php else: ?>
+                    <!-- Usuario no logueado -->
+                    <button id="iniciar-secion" type="button" class="btn btn-light" onclick="abrirModal()">
+                        Iniciar Sesión
+                    </button>
+                <?php endif; ?>
             </div>
         </div>
         </header>
@@ -69,7 +83,6 @@
             </div>
         </div>
 
-
         <div class="container_news">
             <div id="noticias">
                 <script src="script.js"></script>
@@ -91,7 +104,6 @@
                 </div>
             </div>
         </div>
-        
     </div>
 
     <!-- Log in -->
@@ -99,7 +111,7 @@
         <div class="login-card">
             <button class="close-btn" onclick="cerrarModal()">&times;</button>
             <h2>Login</h2>
-            <form id="loginForm" action="login.php" method="POST">
+            <form id="loginForm">
                 <div class="form-group">
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required>
@@ -117,14 +129,12 @@
                 </div>
 
                 <div class="create-account">
-                    New user? <a href="#" onclick="abrirModalRegistro()">Crear cuenta aquí</a>
+                    New user? <a href="#" onclick="abrirModalRegistro()">Crea tu cuenta aquí</a>
                 </div>
-                
             </form>
         </div>
     </div>
 
-    
     <script src="login.js"></script>
     <!-- fin login -->
 
@@ -133,8 +143,8 @@
         <div class="login-card">
             <button class="close-btn" onclick="cerrarModalRegistro()">&times;</button>
             <button class="back-btn" onclick="regresarAlLogin()" title="Volver al login">←</button>
-            <h2>Create Account</h2>
-            <form id="registerForm" action="register.php" method="POST">
+            <h2>Crear cuenta</h2>
+            <form id="registerForm">
                 <div class="form-group">
                     <label for="reg_email">Email:</label>
                     <input type="email" id="reg_email" name="email" required>
@@ -160,7 +170,7 @@
         <div id="footer-content">
             <!-- Header del footer con logo -->
             <div class="footer-header">
-                <img src="../Imagenes/letra-t.png" alt="Logo News Tech" class="footer-logo">
+                <img src="/Noticiero/Imagenes/letra-t-inversa.png" alt="Logo News Tech" class="footer-logo">
                 <div>
                     <h2 class="footer-brand">News Tech</h2>
                     <p class="footer-tagline">Innovación y tecnología al alcance de todos</p>
@@ -204,7 +214,7 @@
                     <p>Mantente conectado con las últimas noticias</p>
                     <div class="social-icons">
                         <a href="#" aria-label="Facebook">
-                            <img src="facebook-icon.png" alt="Facebook">
+                            <img src="Noticiero/Imagenes/facebook-icon.png" alt="Facebook">
                         </a>
                         <a href="#" aria-label="Twitter">
                             <img src="twitter-icon.png" alt="Twitter">
@@ -248,6 +258,5 @@
             </div>
         </div>
     </footer>
-    
 </body>
 </html>
