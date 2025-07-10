@@ -1,5 +1,5 @@
-
 <?php
+/*
 // logout.php - Cerrar sesión
 require_once 'config.php';
 
@@ -12,4 +12,12 @@ $_SESSION = array();
 session_destroy();
 
 echo json_encode(['success' => true, 'message' => 'Sesión cerrada exitosamente']);
+*/
+
+require_once 'config.php';
+require_once 'auth.php';
+
+// Cerrar sesión
+cerrarSesion();
+
 ?>
