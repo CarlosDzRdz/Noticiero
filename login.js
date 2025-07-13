@@ -39,14 +39,18 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .then(response => response.json())
         .then(data => {
-            if (data.success) {
-                alert('Login exitoso');
-                cerrarModal();
-                // Recargar la página para mostrar el usuario logueado
-                window.location.reload();
+        if (data.success) {
+            alert('Login exitoso');
+            cerrarModal();
+
+            if (data.rol === 'admin') {
+                window.location.href = 'admin_dashboard.php';
             } else {
-                alert('Error: ' + data.message);
+                window.location.reload();
             }
+        } else {
+            alert('Error: ' + data.message);
+        }
         })
         .catch(error => {
             console.error('Error:', error);
