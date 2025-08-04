@@ -18,6 +18,8 @@ require_once 'config.php';
     <link rel="icon" type="image/png" href="../Imagenes/letra-t.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+    
+
 </head>
 
 <body>
@@ -46,8 +48,9 @@ require_once 'config.php';
                             <?php echo htmlspecialchars($_SESSION['usuario_nombre']); ?>
                         </button>
                         <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="perfil.php">Mi Perfil</a></li>
+                            <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="#" onclick="cerrarSesion()">Cerrar Sesión</a></li>
-                            <li><a class="dropdown-item" href="#" >Mi Perfil</a></li>
                         </ul>
                     </div>
                 <?php else: ?>
@@ -125,11 +128,11 @@ require_once 'config.php';
                 <button type="submit" class="login-btn">Iniciar sesión</button>
 
                 <div class="forgot-password">
-                    <a href="#" onclick="alert('Función próximamente')">¿Olvidaste tu contraseña?</a>
+                    <a href="#" onclick="alert('Función próximamente')">Forgot password?</a>
                 </div>
 
                 <div class="create-account">
-                    New user? <a href="#" onclick="abrirModalRegistro()">Crea tu cuenta aquí</a>
+                    New user? <a href="#" onclick="abrirModalRegistro()">Create account here</a>
                 </div>
             </form>
         </div>
@@ -143,7 +146,7 @@ require_once 'config.php';
         <div class="login-card">
             <button class="close-btn" onclick="cerrarModalRegistro()">&times;</button>
             <button class="back-btn" onclick="regresarAlLogin()" title="Volver al login">←</button>
-            <h2>Crear cuenta</h2>
+            <h2>Create Account</h2>
             <form id="registerForm">
                 <div class="form-group">
                     <label for="reg_email">Email:</label>
@@ -170,7 +173,7 @@ require_once 'config.php';
         <div id="footer-content">
             <!-- Header del footer con logo -->
             <div class="footer-header">
-                <img src="/Noticiero/Imagenes/letra-t-inversa.png" alt="Logo News Tech" class="footer-logo">
+                <img src="/Noticiero/Imagenes/letra-t.png" alt="Logo News Tech" class="footer-logo">
                 <div>
                     <h2 class="footer-brand">News Tech</h2>
                     <p class="footer-tagline">Innovación y tecnología al alcance de todos</p>
@@ -214,7 +217,7 @@ require_once 'config.php';
                     <p>Mantente conectado con las últimas noticias</p>
                     <div class="social-icons">
                         <a href="#" aria-label="Facebook">
-                            <img src="Noticiero/Imagenes/facebook-icon.png" alt="Facebook">
+                            <img src="facebook-icon.png" alt="Facebook">
                         </a>
                         <a href="#" aria-label="Twitter">
                             <img src="twitter-icon.png" alt="Twitter">

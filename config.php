@@ -2,7 +2,7 @@
 // config.php - Configuración de la base de datos
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root'); // Usuario por defecto de WAMP
-define('DB_PASS', ''); // Contraseña vacía por defecto en WAMP
+define('DB_PASS', 'root'); // Contraseña vacía por defecto en WAMP
 define('DB_NAME', 'news_tech');
 
 // Función para conectar a la base de datos
