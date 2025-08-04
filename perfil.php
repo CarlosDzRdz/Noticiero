@@ -166,7 +166,7 @@ try {
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
             <a class="navbar-brand" href="index.php">
-                <img src="/Noticiero/Imagenes/letra-t.png" alt="Logo" width="30" class="me-2">
+                <img src="../Imagenes/letra-t.png" alt="Logo" width="30" class="me-2">
                 News Tech
             </a>
             <div class="navbar-nav ms-auto">
