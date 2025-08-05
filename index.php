@@ -133,7 +133,7 @@ require_once 'config.php';
                 <button type="submit" class="login-btn">Iniciar sesión</button>
 
                 <div class="forgot-password">
-                    <a href="#" onclick="alert('Función próximamente')">¿Olvidaste tu contraseña?</a>
+                    <a href="/Noticiero/forgot_password.php">¿Olvidaste tu contraseña?</a>
                 </div>
 
                 <div class="create-account">
